@@ -1,0 +1,249 @@
+//@color-red: #e44739;
+//@color-black: #333;
+//@color-white: #f2f3f4;
+//@color-blue: #257F8C;
+
+
+@h1-size-ratio: 6px;
+@h1-size-lg: 43px;
+@h1-size-md: @h1-size-lg - @h1-size-ratio;
+@h1-size-sm: @h1-size-md - @h1-size-ratio;
+@h1-size-xs: @h1-size-sm - @h1-size-ratio;
+
+@h2-size-ratio: 4px;
+@h2-size-lg: 30px;
+@h2-size-md: @h2-size-lg - @h2-size-ratio;
+@h2-size-sm: @h2-size-md - @h2-size-ratio;
+@h2-size-xs: @h2-size-sm - @h2-size-ratio;
+
+@h3-size-ratio: 2px;
+@h3-size-lg: 20px;
+@h3-size-md: @h3-size-lg - @h3-size-ratio;
+@h3-size-sm: @h3-size-md - @h3-size-ratio;
+@h3-size-xs: @h3-size-sm - @h3-size-ratio;
+
+@h4-size-ratio: 2px;
+@h4-size-lg: 18px;
+@h4-size-md: @h4-size-lg - @h4-size-ratio;
+@h4-size-sm: @h4-size-md - @h4-size-ratio;
+@h4-size-xs: @h4-size-sm - @h4-size-ratio;
+
+@h5-size-ratio: 2px;
+@h5-size-lg: 15px;
+@h5-size-md: @h5-size-lg - @h5-size-ratio;
+@h5-size-sm: @h5-size-md - @h5-size-ratio;
+@h5-size-xs: @h5-size-sm - @h5-size-ratio;
+
+@p-size-ratio: 1px;
+@p-size-lg: 14px;
+@p-size-md: @p-size-lg - @p-size-ratio;
+@p-size-sm: @p-size-md - @p-size-ratio;
+@p-size-xs: @p-size-sm - @p-size-ratio;
+
+@ul-size-ratio: 1.2px;
+@ul-size-lg: 14px;
+@ul-size-md: @ul-size-lg - @ul-size-ratio;
+@ul-size-sm: @ul-size-md - @ul-size-ratio;
+@ul-size-xs: @ul-size-sm - @ul-size-ratio;
+
+@square-image-large-ratio: 25px;
+@square-image-large-lg: 150px;
+@square-image-large-md: @square-image-large-lg - @square-image-large-ratio;
+@square-image-large-sm: @square-image-large-md - @square-image-large-ratio;
+@square-image-large-xs: @square-image-large-sm - @square-image-large-ratio;
+
+@square-image-middle-ratio: 10px;
+@square-image-middle-lg: 100px;
+@square-image-middle-md: @square-image-middle-lg - @square-image-middle-ratio;
+@square-image-middle-sm: @square-image-middle-md - @square-image-middle-ratio;
+@square-image-middle-xs: @square-image-middle-sm - @square-image-middle-ratio;
+
+@square-image-small-ratio: 8px;
+@square-image-small-lg: 80px;
+@square-image-small-md: @square-image-small-lg - @square-image-small-ratio;
+@square-image-small-sm: @square-image-small-md - @square-image-small-ratio;
+@square-image-small-xs: @square-image-small-sm - @square-image-small-ratio;
+
+section, header { /* Важно ! Нужно, чтобы самый родительский блок каждого элемента, имел автоматическую ширину и высоту*/
+  display: block;
+  overflow: auto;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+
+}
+
+//.body-padding { /*Когда плавающий навбар, нужен отступ от начала, равынй его величине*/
+//  padding-top: @navbar-logo-img-lg + @navbar-logo-img-margin * 2;
+//  .sm({
+//    padding-top: @navbar-logo-img-sm + @navbar-logo-img-margin * 2;
+//  });
+//  .xs({
+//    padding-top: @navbar-logo-img-xs + @navbar-logo-img-margin * 2;
+//  });
+//}
+
+
+/* Бутcтрап - дурак. Внутри contriner, row высота блока сбрасывается и остается высота контента.
+  Используем там, где необходим высота на весь экран (landing).
+*/
+
+
+body {
+  min-width: 300px;
+
+//  .pt-sans-font();
+  background-color: @body-color;
+  color: @body-text-color;
+
+
+  textarea {
+    resize: none;
+  }
+
+
+
+  .full-height { /* Чтобы дочерние элементы, которым нужно, могли задавать высоту на весь экран (full, slider) */
+    height: 100%;
+  }
+
+  .row-eq-height {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:         flex;
+  }
+
+
+  h1 {
+    .all-sizes({
+      font-size: @h1-size-lg;
+    }, {
+      font-size: @h1-size-md;
+    }, {
+      font-size: @h1-size-sm;
+    }, {
+      font-size: @h1-size-xs;
+    });
+  }
+
+  h2 {
+    .all-sizes({
+        font-size: @h2-size-lg;
+    }, {
+        font-size: @h2-size-md;
+    }, {
+        font-size: @h2-size-sm;
+    }, {
+        font-size: @h2-size-xs;
+    });
+  }
+
+  h3 {
+      .all-sizes({
+          font-size: @h3-size-lg;
+      }, {
+          font-size: @h3-size-md;
+      }, {
+          font-size: @h3-size-sm;
+      }, {
+          font-size: @h3-size-xs;
+      });
+  }
+
+  h4 {
+      .all-sizes({
+          font-size: @h4-size-lg;
+      }, {
+          font-size: @h4-size-md;
+      }, {
+          font-size: @h4-size-sm;
+      }, {
+          font-size: @h4-size-xs;
+      });
+  }
+
+  h5 {
+      .all-sizes({
+          font-size: @h5-size-lg;
+      }, {
+          font-size: @h5-size-md;
+      }, {
+          font-size: @h5-size-sm;
+      }, {
+          font-size: @h5-size-xs;
+      });
+  }
+
+  p {
+      line-height: 1.5;
+//      margin-bottom: 20px;
+      .all-sizes({
+          font-size: @p-size-lg;
+      }, {
+          font-size: @p-size-md;
+      }, {
+          font-size: @p-size-sm;
+      }, {
+          font-size: @p-size-xs;
+      });
+  }
+
+  ul, ol {
+    .all-sizes({
+      font-size: @ul-size-lg;
+    }, {
+      font-size: @ul-size-md;
+    }, {
+      font-size: @ul-size-sm;
+    }, {
+      font-size: @ul-size-xs;
+    });
+
+  }
+
+  ul {
+    list-style-type: none;
+  }
+
+  .square-image-large {
+      .all-sizes({
+          width: @square-image-large-lg;
+      }, {
+          width: @square-image-large-md;
+      }, {
+          width: @square-image-large-sm;
+      }, {
+          width: @square-image-large-xs;
+      });
+  }
+
+  .square-image-middle {
+      .all-sizes({
+          width: @square-image-middle-lg;
+      }, {
+          width: @square-image-middle-md;
+      }, {
+          width: @square-image-middle-sm;
+      }, {
+          width: @square-image-middle-xs;
+      });
+  }
+
+  .square-image-small {
+      .all-sizes({
+          width: @square-image-small-lg;
+      }, {
+          width: @square-image-small-md;
+      }, {
+          width: @square-image-small-sm;
+      }, {
+          width: @square-image-small-xs;
+      });
+  }
+}
+
+
+

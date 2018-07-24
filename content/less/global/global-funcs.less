@@ -1,0 +1,215 @@
+.border-radius(@radius: 5px) {
+    border-radius: @radius;
+    -moz-border-radius: @radius;
+    -webkit-border-radius: @radius;
+    -khtml-border-radius: @radius;
+}
+.opacity(@val: 80) {
+    filter:progid:DXImageTransform.Microsoft.Alpha(opacity=@val);
+    -moz-opacity: @val/100;
+    -khtml-opacity: @val/100;
+    opacity: @val/100;
+}
+.gradient(@side, @c1, @c2, @c3){
+	background: -webkit-linear-gradient(@side, @c1, @c2, @c3); 
+    background: -moz-linear-gradient(@side, @c1, @c2, @c3); 
+    background: -ms-linear-gradient(@side, @c1, @c2, @c3); 
+    background: -o-linear-gradient(@side, @c1, @c2, @c3);
+}
+.gradient-vertical(@start: #000, @stop: #fff) {
+    background: @start;
+    background: -moz-linear-gradient(top,  @start 0%, @stop 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,@start), color-stop(100%,@stop));
+    background: -webkit-linear-gradient(top,  @start 0%,@stop 100%);
+    background: -o-linear-gradient(top,  @start 0%,@stop 100%);
+    background: -ms-linear-gradient(top,  @start 0%,@stop 100%);
+    background: linear-gradient(to bottom,  @start 0%,@stop 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=@start, endColorstr=@stop,GradientType=0 );
+}
+.gradient-horizontal(@start: #000, @stop: #fff) {
+    background: @start;
+    background: -moz-linear-gradient(left,  @start 0%, @stop 100%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,@start), color-stop(100%,@stop));
+    background: -webkit-linear-gradient(left,  @start 0%,@stop 100%);
+    background: -o-linear-gradient(left,  @start 0%,@stop 100%);
+    background: -ms-linear-gradient(left,  @start 0%,@stop 100%);
+    background: linear-gradient(to right,  @start 0%,@stop 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@start', endColorstr='@stop',GradientType=1 );
+}
+.quick-gradient(@origin: top, @opacity: 0.5) {
+    background-image: -webkit-linear-gradient(@origin, rgba(0,0,0,0.0), rgba(0,0,0,@opacity));
+    background-image: -moz-linear-gradient(@origin, rgba(0,0,0,0.0), rgba(0,0,0,@opacity));
+    background-image: -o-linear-gradient(@origin, rgba(0,0,0,0.0), rgba(0,0,0,@opacity));
+    background-image: -ms-linear-gradient(@origin, rgba(0,0,0,0.0), rgba(0,0,0,@opacity));
+    background-image: linear-gradient(@origin, rgba(0,0,0,0.0), rgba(0,0,0,@opacity));
+}
+.text-shadow (@string: 0 1px 3px rgba(0, 0, 0, 0.25)) {
+    text-shadow: @string;
+}
+.box-shadow(@val) {
+	-webkit-box-shadow: @val;
+	-moz-box-shadow:    @val;
+	box-shadow:         @val;
+}
+.transitions(@val) {
+    -webkit-transition: @val;
+    -moz-transition: @val;
+    -ms-transition: @val;
+    -o-transition: @val;
+    transition: @val;
+}
+.transform (@rotate: 90deg, @scale: 1, @skew: 0deg, @translate: 0px) {
+    -webkit-transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
+    -moz-transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
+    -o-transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
+    -ms-transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
+    transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
+}
+.animation (@name, @duration: 300ms, @delay: 0, @ease: ease) {
+    -webkit-animation: @name @duration @delay @ease;
+    -moz-animation: @name @duration @delay @ease;
+    -ms-animation: @name @duration @delay @ease;
+    animation: @name @duration @delay @ease;
+}
+
+.lg (@rules){
+	@media (min-width: 1200px) {
+		@rules();
+	}
+}
+
+.md (@rules){
+	@media (min-width: 992px) and (max-width: 1200px) {
+		@rules();
+	}
+}
+
+.sm (@rules){
+	@media (min-width: 768px) and (max-width: 992px) {
+		@rules();
+	}
+}
+
+.xs (@rules){
+	@media (max-width: 768px){
+		@rules();
+	}
+}
+
+.all-sizes (@s1, @s2, @s3, @s4){
+	.lg(@s1);
+	.md(@s2);
+	.sm(@s3);
+	.xs(@s4);
+}
+
+.sans-serif-font() {
+  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+}
+
+.serif-font() {
+  font-family: 'Merriweather', 'Helvetica Neue', Arial, sans-serif;
+}
+
+.pt-sans-font(){
+  font-family: 'PT Sans Caption', sans-serif;
+}
+
+.placeholderStyle(@rules){
+  .form-control::-webkit-input-placeholder { @rules(); }
+  .form-control:-moz-placeholder { @rules(); }
+  .form-control::-moz-placeholder { @rules(); }
+  .form-control:-ms-input-placeholder { @rules(); }
+}
+
+.objectSize(@start_w, @ratio_w, @start_h, @ratio_h){
+  width: @start_w;
+  height: @start_h;
+  .md({
+    width: @start_w - @ratio_w;
+    height: @start_h - @ratio_h;
+  });
+  .sm({
+    width: @start_w - @ratio_w * 2;
+    height: @start_h - @ratio_h * 2;
+  });
+  .xs({
+    width: @start_w - @ratio_w * 2;
+    height: @start_h - @ratio_h * 2;
+  });
+}
+
+.objectWidth(@start_w, @ratio_w){
+  width: @start_w;
+  height: auto;
+  .md({
+    width: @start_w - @ratio_w;
+  });
+  .sm({
+    width: @start_w - @ratio_w * 2;
+  });
+  .xs({
+    width: @start_w - @ratio_w * 3;
+  });
+}
+
+.objectHeight(@start_h, @ratio_h){
+  width: auto;
+  height: @start_h;
+  .md({
+    height: @start_h - @ratio_h;
+  });
+  .sm({
+    height: @start_h - @ratio_h * 2;
+  });
+  .xs({
+    height: @start_h - @ratio_h * 3;
+  });
+}
+
+.fontSize(@font-size, @font-ratio){
+  font-size: @font-size;
+  .md({
+    font-size: @font-size - @font-ratio;
+  });
+  .sm({
+    font-size: @font-size - @font-ratio * 2;
+  });
+  .xs({
+    font-size: @font-size - @font-ratio * 3;
+  });
+}
+
+.buttonObject(@start_w, @ratio_w, @start_h, @ratio_h, @font-size, @font-ratio){
+  font-size: @font-size;
+  width: @start_w;
+  height: @start_h;
+  .md({
+    font-size: @font-size - @font-ratio;
+    width: @start_w - @ratio_w;
+    height: @start_h - @ratio_h;
+  });
+  .sm({
+    font-size: @font-size - @font-ratio * 2;
+    width: @start_w - @ratio_w * 2;
+    height: @start_h - @ratio_h * 2;
+  });
+  .xs({
+    font-size: @font-size - @font-ratio * 3;
+    width: @start_w - @ratio_w * 3;
+    height: @start_h - @ratio_h * 3;
+  });
+}
+
+.size(@name, @px, @ratio){
+  @{name}: @px !important;
+  .md({
+    @{name}: @px - @ratio !important;
+  });
+  .sm({
+    @{name}: @px - @ratio * 2 !important;
+  });
+  .xs({
+    @{name}: @px - @ratio * 3 !important;
+  });
+}

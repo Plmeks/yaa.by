@@ -1,0 +1,55 @@
+#ychet-contact {
+
+  .size(margin-bottom, 30px, 4px);
+
+  h3{
+    .size(margin-top, 20px, 4px);
+  }
+
+  .contact-text {
+    color: @color-red;
+    .size(font-size, 30px, 5px);
+  }
+
+  .contact {
+    .size(margin-bottom, 30px, 3px)
+  }
+
+  img {
+    border-radius: 100px;
+    background: rgba(124, 122, 123, 0.58);
+    height: auto;
+    .size(width, 95px, 12px);
+    &:hover {
+      transition: background 0.5s ease;
+      background: @color-grey;
+      border: 3px solid @color-red;
+    }
+  }
+
+  #form {
+    input  {
+      .size(height, 55px, 6px);
+      .size(font-size, 15px, 1px);
+    }
+    .left-addon .glyphicon {
+      left:  0px;
+    }
+
+    .right-addon .glyphicon {
+      right: 0px;
+    }
+
+    .inner-addon {
+      position: relative;
+    }
+
+    .inner-addon .glyphicon {
+      position: absolute;
+      pointer-events: none;
+      .size(font-size, 25px, 2px);
+    }
+
+  }
+
+}

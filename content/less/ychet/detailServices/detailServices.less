@@ -1,0 +1,37 @@
+#detailServices {
+  .intro {
+    text-align: justify;
+    padding-top: 20px;
+    .size(font-size, 16px, 2px);
+  }
+
+  .subintro {
+    .size(font-size, 18px, 2px);
+  }
+
+  img {
+    display: inline-block;
+    margin: 0 auto;
+    width: 400px;
+    float: right;
+    .size(margin, 20px, 8px);
+    object-fit: cover;
+    float: right;
+    .sm({
+      float: none;
+      width: 60%;
+    });
+    .xs({
+      float: none;
+      width: 70%;
+    });
+  }
+
+  li {
+    margin: 5px;
+  }
+
+  .section-heading {
+    margin-top: 20px;
+  }
+}

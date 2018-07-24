@@ -1,0 +1,243 @@
+@slider-prokatit-carousel-gradient: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+
+@slider-prokatit-text-color: #333;
+@slider-prokatit-error-color: @color-red;
+
+@slider-prokatit-input-height-ratio: 6px;
+@slider-prokatit-input-height-lg: 55px;
+@slider-prokatit-input-height-md: @slider-prokatit-input-height-lg - @slider-prokatit-input-height-ratio;
+@slider-prokatit-input-height-sm: @slider-prokatit-input-height-md - @slider-prokatit-input-height-ratio;
+@slider-prokatit-input-height-xs: @slider-prokatit-input-height-sm - @slider-prokatit-input-height-ratio;
+
+@slider-prokatit-icon-size-ratio: 2px;
+@slider-prokatit-icon-size-lg: 25px;
+@slider-prokatit-icon-size-md: @slider-prokatit-icon-size-lg - @slider-prokatit-icon-size-ratio;
+@slider-prokatit-icon-size-sm: @slider-prokatit-icon-size-md - @slider-prokatit-icon-size-ratio;
+@slider-prokatit-icon-size-xs: @slider-prokatit-icon-size-sm - @slider-prokatit-icon-size-ratio;
+
+
+@slider-prokatit-button-width-ratio: 3px;
+@slider-prokatit-button-width-lg: 260px;
+@slider-prokatit-button-width-md: 250px;
+@slider-prokatit-button-width-sm: 250px;
+@slider-prokatit-button-width-xs: 250px;
+
+@slider-prokatit-button-height-ratio: 3px;
+@slider-prokatit-button-height-lg: 260px;
+@slider-prokatit-button-height-md: 250;
+@slider-prokatit-button-height-sm: 250;
+@slider-prokatit-button-height-xs: 250;
+#landing-slider-prokatit {
+
+  position: relative;
+//  height: calc(100% ~"-" @navbar-logo-img-lg + @navbar-logo-img-margin * 2);
+  height: 100%;
+  .xs({
+    height: 80%;
+  });
+
+  #slider {
+    background-position-x: 50%;
+    background-position-y: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    position: relative;
+  }
+
+  img { // just with image !
+    object-fit: cover;  // картинка  масштабируется
+    position: relative;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+  }
+
+  .item {
+    background: @slider-prokatit-carousel-gradient;
+    height: 100%;
+  }
+
+  .success {
+    color: rgb(255, 78, 57);
+  }
+
+  #upper {
+    color: white;
+    position: absolute;
+
+    top: 50%;
+    .xs({
+      top: 30%;
+      transform: translate(-50%, -30%);
+    });
+
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    z-index: 1;
+
+    .row > div {
+      padding: 0;
+    }
+
+    input, select  {
+      height: @slider-prokatit-input-height-lg;
+      .md({
+        height: @slider-prokatit-input-height-md;
+      });
+      .sm({
+        height: @slider-prokatit-input-height-sm;
+      });
+      .xs({
+        height: @slider-prokatit-input-height-xs;
+      });
+    }
+
+    .input-lg {
+      .md({
+        font-size: 15px;
+      });
+      .sm({
+        font-size: 14px;
+      });
+      .xs({
+        font-size: 13px;
+      });
+
+    }
+    .input-lg, .form-group {  // отступы в инпутакх..
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    .form-group {
+      margin-bottom: 0;
+    }
+
+    input[name="from"], input[name="to"], select {
+      cursor: pointer;
+    }
+
+    select[name="console"] {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      display: block;
+      line-height:normal; // для select нужно, чтобы полсе appearance none, он отображался ровно по центру
+    }
+
+    .has-error label, .with-errors li {
+      color: white !important;
+    }
+
+    label {
+      .sm({
+        display: none;
+      });
+      .xs({
+        display: none;
+      });
+    }
+
+    .placeholderStyle({
+      color: fadeout(@slider-prokatit-text-color, 50%);
+    });
+
+    .has-error .form-control, .has-error {
+      border-width: 2px;
+      .placeholderStyle({
+        color: @slider-prokatit-error-color;
+      });
+    }
+
+    .has-error .inner-addon .glyphicon {
+      color: @slider-prokatit-error-color;
+    }
+
+    .form-control {
+      border-radius: 0px;
+      box-shadow: none;
+      color: @slider-prokatit-text-color;
+    }
+
+    #info {
+      padding: 0 20px;
+      margin-top: 100px;
+      margin-bottom: 110px;
+      .md({
+        margin-bottom: 100px;
+      });
+      .sm({
+        margin-bottom: 90px;
+      });
+      .xs({
+        margin-bottom: 20px;
+        margin-top: 90px;
+      });
+    }
+
+    .left-addon .glyphicon {
+      left:  0px;
+    }
+
+    .right-addon .glyphicon {
+      right: 0px;
+    }
+
+    button {
+      color: white;
+      border: 0;
+      background-color: @color-red;
+      border-radius: 0;
+
+      margin-top: 20px;
+      .xs({
+        margin-top: 10px;
+      });
+      transition: all .3s;
+      &:hover {
+//        border: 3px solid white;
+        background-color: rgb(255, 76, 59);
+        transition: all.3s;
+      }
+
+      .buttonObject(270px, 11px, 70px, 11px, 20px, 2px);
+
+      font-weight: bold;
+    }
+
+    .inner-addon {
+      position: relative;
+    }
+
+  /* style icon */
+    .inner-addon .glyphicon {
+      position: absolute;
+      pointer-events: none;
+      color: @slider-prokatit-text-color;
+      .all-sizes({
+        font-size: @slider-prokatit-icon-size-lg;
+        padding: (@slider-prokatit-input-height-lg - @slider-prokatit-icon-size-lg) / 2;
+      }, {
+      font-size: @slider-prokatit-icon-size-md;
+        padding: (@slider-prokatit-input-height-md - @slider-prokatit-icon-size-md) / 2;
+      }, {
+        font-size: @slider-prokatit-icon-size-sm;
+        padding: (@slider-prokatit-input-height-sm - @slider-prokatit-icon-size-sm) / 2;
+      }, {
+        font-size: @slider-prokatit-icon-size-xs;
+        padding: (@slider-prokatit-input-height-xs - @slider-prokatit-icon-size-xs) / 2;
+      });
+    }
+  }
+
+
+  .datepicker .datepicker-dropdown {
+    border-radius: 0px !important;
+  }
+
+  .owl-stage-outer, .owl-stage, .owl-item {  /*Высота по экрану для карусели ( заходим в f12 и смотрим: все блоки, выше дочернего (картинки) должны быть с высотой)*/
+    height: 100%;
+  }
+}

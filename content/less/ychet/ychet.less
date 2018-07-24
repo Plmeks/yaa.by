@@ -1,0 +1,42 @@
+//@color-red: #D31F13;
+@color-red: #b21e13;
+@color-white: #f2f3f4;
+@color-black: #413D3E;
+@color-grey: #7C7A7B;
+
+@body-color: #f2f3f4;
+@body-text-color: #494949;
+
+@a-color: #333;
+@a-hover-color: darken(@a-color, 20%);
+
+body {
+  .sans-serif-font();
+  .red {
+    color: @color-red;
+  }
+  hr {
+    .size(max-width, 200px, 20px);
+    border: 3px solid @color-red;
+    margin-bottom: 60px;
+  }
+
+  .topic-head {
+    color: #101010;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+
+  //    margin-bottom: 60px;
+    margin-top: 60px;
+  }
+
+  .section-heading {
+    background-color: @color-red;
+    color: white;
+    h2 {
+      margin: 30px;
+    }
+  }
+}
+

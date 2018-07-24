@@ -1,0 +1,79 @@
+#ychet-about {
+  .topic-header {
+    margin-bottom: 20px;
+  }
+
+  #deviz {
+    font-style: italic;
+    border-top: 3px solid #413D3E;
+    border-bottom: 3px solid #413D3E;
+    padding-top: 10px;
+    padding-bottom: 20px;
+  }
+
+  p {
+//    .size(font-size, 15px, 1px);
+    margin-top: 30px;
+  }
+
+  .image-holder {
+    .objectHeight(400px, 10px);
+    padding: 30px;
+    padding-top: 0;
+  }
+
+  img {
+    object-fit: cover;  // картинка  масштабируется
+    height: 100%;
+    width: 100%;
+  }
+
+
+
+  .image-div {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    &:hover {
+      .gradient {
+        background-color: @color-red;
+      }
+    }
+    .gradient {
+      transition: all 0.5s ease;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: rgba(65, 61, 62, 0.73);
+
+      top: 0;
+    }
+
+    .under {
+      color: white;
+      position: absolute;
+      top: 35%;
+    //    left: 50%;
+      transform: translate(0, -35%);
+      width: 100%;
+    }
+  }
+
+
+  .parallax-window{
+    width: 100%;
+    .size(height, 300px, 20px);
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    color: white;
+    position: relative; // важно !
+  }
+
+  .parallax-inner {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    width: 100%;
+  }
+
+
+}

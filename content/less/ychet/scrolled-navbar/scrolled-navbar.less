@@ -1,0 +1,105 @@
+@navbar-scrolled-color: white;
+
+@navbar-scrolled-logo-img-ratio: 5px;
+@navbar-scrolled-logo-img-margin: 6px; /* Top and bottom margin */
+@navbar-scrolled-logo-img-lg: 60px;
+@navbar-scrolled-logo-img-md: @navbar-scrolled-logo-img-lg - @navbar-scrolled-logo-img-ratio;
+@navbar-scrolled-logo-img-sm: @navbar-scrolled-logo-img-md - @navbar-scrolled-logo-img-ratio;
+@navbar-scrolled-logo-img-xs: @navbar-scrolled-logo-img-sm - @navbar-scrolled-logo-img-ratio;
+
+@navbar-scrolled-logo-font-ratio: 1px;
+@navbar-scrolled-menu-font-lg: 14px;
+@navbar-scrolled-menu-font-md: @navbar-scrolled-menu-font-lg - @navbar-scrolled-logo-font-ratio;
+@navbar-scrolled-menu-font-sm: @navbar-scrolled-menu-font-md - @navbar-scrolled-logo-font-ratio;
+@navbar-scrolled-menu-font-xs: @navbar-scrolled-menu-font-sm - @navbar-scrolled-logo-font-ratio;
+
+@navbar-scrolled-mobile-button-width: 65px;
+@navbar-scrolled-mobile-button-height: 35px;
+@navbar-scrolled-mobile-button-margin-top: (@navbar-scrolled-logo-img-md +  (@navbar-scrolled-logo-img-margin * 2) - @navbar-scrolled-mobile-button-height) / 2;
+
+@navbar-scrolled-height: @navbar-scrolled-logo-img-lg + @navbar-scrolled-logo-img-margin * 2;
+
+.body-padding  {
+  padding-top: @navbar-scrolled-logo-img-lg + @navbar-scrolled-logo-img-margin * 2;
+}
+
+#ychet-scrolled-navbar {
+  .navbar-default {
+    border-color: @navbar-scrolled-color;
+  }
+  nav.navbar {
+    margin: 0;
+
+    #navbar-scrolled-logo-img {
+      margin: @navbar-scrolled-logo-img-margin 0 @navbar-scrolled-logo-img-margin 0;
+      .all-sizes(
+      {
+        height: @navbar-scrolled-logo-img-lg;
+      },
+      {
+        height: @navbar-scrolled-logo-img-md;
+      },
+      {
+        height: @navbar-scrolled-logo-img-sm;
+      },
+      {
+        height: @navbar-scrolled-logo-img-md;
+        padding-left: 30px;
+      });
+    }
+    .box-shadow(0px 5px 11px 0px rgba(50, 50, 50, 0.08)); /*Navbar shadow*/
+      background-color: @navbar-scrolled-color;
+        .navbar-header { /* Left block, where logo image and button mobile. */
+          #mobile-button {
+            margin-top: @navbar-scrolled-mobile-button-margin-top;
+            width: @navbar-scrolled-mobile-button-width;
+            border: 0;
+            background-color: transparent;
+            span {
+              background-color: @color-black;
+            }
+            &:hover {
+              span {
+                background-color: @color-grey;
+              }
+            }
+          }
+        }
+
+    #navbar-scrolled { /* Menu here */
+      ul{
+        li{
+          a {
+            padding-top: 0;
+            padding-bottom: 0;
+            color: @color-black;
+            font-weight: bold;
+            &:hover {
+              color: @color-red;
+            }
+
+            .all-sizes(
+            {
+              font-size: @navbar-scrolled-menu-font-lg;
+              line-height: @navbar-scrolled-logo-img-lg + @navbar-scrolled-logo-img-margin * 2;
+            },
+            {
+              font-size: @navbar-scrolled-menu-font-md;
+              line-height: @navbar-scrolled-logo-img-md + @navbar-scrolled-logo-img-margin * 2;
+            },
+            {
+              font-size: @navbar-scrolled-menu-font-sm;
+              line-height: @navbar-scrolled-logo-img-sm + @navbar-scrolled-logo-img-margin * 2;
+            },
+            {
+              font-size: @navbar-scrolled-menu-font-xs; /* Collapsed-mobile font */
+              padding-top: 6px; /* Padding size of collasing-mobile menu */
+              padding-bottom: 6px;
+            });
+          }
+        }
+      }
+    }
+}
+
+}

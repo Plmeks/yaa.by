@@ -1,0 +1,108 @@
+@reviews-slider-height: 300px;
+@reviews-slider-dots-size: 25px;
+
+#ychet-reviews {
+  .size(padding-bottom, 30px, 4px);
+  p {
+    .size(font-size, 18px, 2px);
+    font-style: italic;
+  }
+
+  h3 {
+    font-weight: bold;
+    .size(margin-bottom, 20px, 2px);
+  }
+
+  .item {
+    text-align: center;
+  }
+
+  .review-photo {
+    display: inline-block;    // я без понятия, что это было, но owl карусель
+    //добавляет к изображениям какую-то ерунду, делая их блоками...т.е. невозможно
+    //становится разместить по центру, т.к. оно заполняет все пространство
+    .size(width, 100px, 7px);
+    .size(height, 100px, 7px);
+    object-fit: cover;
+  }
+
+
+  .owl-controls {
+    .size(margin-top, 20px, 3px);
+    .owl-dot  {
+      span {
+        background: rgba(37, 127, 140, 0.43);;
+        &:hover {
+          background:  @color-grey;
+        }
+      }
+    }
+
+    .owl-dot.active {
+      span {
+        background: @color-grey;
+      }
+    }
+  }
+
+img {
+  border-radius: 50px;
+  border: 2px solid black;
+}
+
+  .control {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    @review-slider-padding-v: 20px;
+    @review-slider-padding-h: 10px;
+    @review-slider-padding-ratio-v: 3px;
+    @review-slider-padding-ratio-h: 2px;
+
+    .size(padding-top, @review-slider-padding-v, @review-slider-padding-ratio-v);
+    .size(padding-bottom, @review-slider-padding-v, @review-slider-padding-ratio-v);
+    .size(padding-left, @review-slider-padding-h, @review-slider-padding-ratio-h);
+    .size(padding-right, @review-slider-padding-h, @review-slider-padding-ratio-h);
+
+    .xs({
+      display: none;
+    });
+    background-color: rgba(228, 71, 57, 0.43);
+    font-size: 17px;
+    color: white;
+    &:hover {
+      background-color: @color-red;
+    }
+    transition: all 0.5s ease;
+    z-index: 100;
+  }
+
+
+  .control.left {
+    left: 5%;
+    transform: translate(-5%, -50%);
+  }
+
+  .control.right {
+    left: 95%;
+    transform: translate(-95%, -50%);
+  }
+
+
+
+
+  // Рабочий способ по вертикальному позиционированию:
+  // Либо через align: center
+  // Либо через 100% ширину и высоту блока, создаем два вложенных, которые ниже
+
+//  #parent {
+//    height: 100%;
+//    width: 100%;
+//    display: table;
+//  }
+//
+//  #child {
+//    display: table-cell;
+//    vertical-align: middle;
+//  }
+}

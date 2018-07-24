@@ -1,0 +1,47 @@
+#ychet-course {
+  p {
+    .xs({
+      text-align: justify;
+    });
+  }
+  img {
+    float: right;
+    .size(width, 400px, 50px);
+    .size(margin, 10px, 2px);
+    .xs({
+      width: 75% !important;
+      float: none;
+      object-fit: cover;
+    });
+  }
+
+  h3 {
+    padding-top: 20px;
+  }
+
+  .panel-heading {
+    cursor: pointer;
+    .glyphicon {
+      margin-right: 10px;
+    }
+    h4 {
+      .size(font-size, 16px, 2px);
+      color: @color-black;
+      &:hover {
+        color: @color-grey;
+      }
+    }
+  }
+
+  p .glyphicon {
+    color: @color-red;
+  }
+
+  .accordion-toggle .glyphicon:before {
+    content: "\2212";
+  }
+
+  .panel-heading.collapsed .accordion-toggle .glyphicon:before {
+    content: "\002b"
+  }
+}

@@ -1,0 +1,68 @@
+#ychet-services {
+  .service-image img {
+    .size(height, 250px, 30px);
+    object-fit: cover;  // картинка  масштабируется
+    width: 100%;
+  }
+
+  .service {
+    .size(margin-bottom, 30px, 4px);
+  }
+
+  .inner-image {
+    position: relative;
+    a:before {
+      background: @color-red;
+      bottom: 0;
+      content: '';
+      display: block;
+      height: 4px;
+      left: 0;
+      opacity: 1;
+      margin: auto;
+      position: absolute;
+      right: 0;
+      width: 0;
+      -moz-transition: 0.4s;
+      -o-transition: 0.4s;
+      -webkit-transition: 0.4s;
+      transition: 0.4s;
+      z-index: 20;
+    }
+
+    a:hover:before {
+      width: 100%;
+      -moz-transition: 0.4s;
+      -o-transition: 0.4s;
+      -webkit-transition: 0.4s;
+      transition: 0.4s;
+    }
+  }
+
+  h5{
+    .size(font-size, 16px, 1px);
+    font-weight: bold;
+    color: @color-black;
+  }
+
+  p {
+    .size(font-size, 14px, 1px);
+    color: @color-grey;
+  }
+
+  .parallax-window{
+    width: 100%;
+    .size(height, 300px, 20px);
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    color: white;
+    position: relative; // важно !
+  }
+
+  .parallax-inner {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    width: 100%;
+  }
+
+}

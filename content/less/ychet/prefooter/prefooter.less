@@ -1,0 +1,78 @@
+#prefooter-simple {
+  background-color: @color-grey;
+  color: white;
+  .size(padding-top, 20px, 4px);
+  .size(padding-bottom, 25px, 4px);
+
+  p {
+    .size(font-size, 16px, 2px);
+  }
+
+  a {
+    color: white;
+    cursor: pointer;
+  }
+
+  .icon {
+    text-align: right;
+    .xs({
+      text-align: center;
+      margin-bottom: 5px;
+    });
+  }
+
+  .glyphicon{
+    .size(font-size, 35px, 5px);
+    color: @color-red;
+  }
+
+  h5 {
+    margin-top: 0;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .links p {
+    .size(margin, 10px, 3px);
+  }
+
+  .contact-block {
+    .size(margin-top, 20px, 4px);
+    .xs({
+      text-align: center !important;
+    });
+  }
+
+  #send {
+
+    .form-control {
+      border-radius: 0px;
+      box-shadow: none;
+    }
+
+    button {
+      color: white;
+      border: 0;
+      background-color: @color-red;
+      border-radius: 0;
+      font-weight: bold;
+
+      transition: all .3s;
+      &:hover {
+        background-color: lighten(@color-red, 10%);
+        transition: all.3s;
+      }
+    }
+
+    .has-error .form-control, .has-error {
+      border-width: 2px;
+      .placeholderStyle({
+        color: @color-red;
+      });
+    }
+
+    .success {
+      margin-top: 50px;
+    }
+  }
+}
